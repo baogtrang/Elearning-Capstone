@@ -7,97 +7,164 @@ $font-stack: 'Open Sans', sans-serif;
 $hover-color: #961040;
 $category-text-color: #e0e0e0;
 
-.course-detail-page {
-    font-family: $font-stack;
-    background: $primary-color;
-    color: white;
+*, ::after, ::before {
+    box-sizing: border-box;
+}
 
-    .course-header {
-        background-color: lighten($primary-color, 5%);
-        padding: 4rem;
-        text-align: center;
-        border-radius: 1rem;
-        margin: 2rem 0;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+main{
+    display: block;
+
+    .inner-banner-wrap{
+        margin-bottom: 100px;
+
+        .inner-banner-container{
+            background-image: url("../../../../public/image/banner/educator-img12.jpg") ;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            text-align: center;
+            position: relative;
+            padding: 150px 0;
+
+            .container {
+                max-width: 1170px;
+                padding-left: 15px;
+                padding-right: 15px;
+
+                .inner-banner-content{
+                    position: relative;
+                    color: $text-color;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    .inner-title{
+                        color: $text-color;
+                        line-height: 1.1;
+                        margin-bottom: 0;
+                        font-size: 60px;
+                        font-weight: 900;
+                    }
+                }
+
+            }
+        }
+        
+        .inner-banner-container::before{
+            background-image: linear-gradient(180deg, #41246D 0%, #41246DE0 15%);
+            content: "";
+            display: block;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            box-sizing: border-box;
+        }
+
+        
+
+        
+    }
+
+    .course-detail-page {
+        font-family: $font-stack;
+        background: $primary-color;
+        color: white;
+    
+        .course-header {
+            background-color: lighten($primary-color, 5%);
+            padding: 4rem;
+            text-align: center;
+            border-radius: 1rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    
+            .course-title {
+            color: $secondary-color;
+            font-size: 4rem; 
+            margin-bottom: 2rem; 
+            text-shadow: 2px 2px rgba(0, 0, 0, 0.1); 
+            }
+    
+            .course-description {
+            color:  $category-text-color;
+            font-size: 1.25rem; 
+    
+            margin-bottom: 2rem; 
+            max-width: 800px; 
+            margin: auto; 
+            }
+            
+            img {
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 1rem; 
+            margin: 2rem 0; 
+            }
+            
+            
+        }
+    
+        .course-content {
+            padding: 2rem; 
+            background-color: lighten($primary-color, 10%);
+            border-radius: 1rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+            .course-instructor {
+            display: inline-block; 
+            margin-right: 1rem; 
+            font-size: 1.25rem;
+            color:  $category-text-color;
+            }
+        
+            .course-category {
+            font-size: 1rem;
+            color: white;
+            margin-top: 1rem;
+            }
+        }
+    
+        .enrollment-section {
+            text-align: center;
+            padding: 3rem;
+            background-color: lighten($primary-color, 15%);
+            border-radius: 1rem;
+            margin: 2rem 0;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            .enroll-button {
+            @extend .btnGlobal;
+            font-size: 1.5rem; 
+            padding: 1rem 3rem; 
+            margin-top: 2rem; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+            &:hover {
+                background-color: darken($secondary-color, 15%);
+                transform: scale(1.05); 
+            }
+            }
+        }
+    }
+    
+}
+
+
+        @media only screen and (max-width: 768px) {
+        .course-header, .course-content, .enrollment-section {
+            padding: 1rem; 
+            margin: 1rem 0; 
+        }
 
         .course-title {
-        color: $secondary-color;
-        font-size: 4rem; 
-        margin-bottom: 2rem; 
-        text-shadow: 2px 2px rgba(0, 0, 0, 0.1); 
-        }
-
-        .course-description {
-        color:  $category-text-color;
-        font-size: 1.25rem; 
-
-        margin-bottom: 2rem; 
-        max-width: 800px; 
-        margin: auto; 
-        }
-        
-        img {
-        max-width: 100%; 
-        height: auto; 
-        border-radius: 1rem; 
-        margin: 2rem 0; 
-        }
-        
-        
-    }
-
-    .course-content {
-        padding: 2rem; 
-        background-color: lighten($primary-color, 10%);
-        border-radius: 1rem;
-        margin: 2rem 0;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
-        .course-instructor {
-        display: inline-block; 
-        margin-right: 1rem; 
-        font-size: 1.25rem;
-        color:  $category-text-color;
-        }
-    
-        .course-category {
-        font-size: 1rem;
-        color: white;
-        margin-top: 1rem;
-        }
-    }
-
-    .enrollment-section {
-        text-align: center;
-        padding: 3rem;
-        background-color: lighten($primary-color, 15%);
-        border-radius: 1rem;
-        margin: 2rem 0;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        .enroll-button {
-        @extend .btnGlobal;
-        font-size: 1.5rem; 
-        padding: 1rem 3rem; 
-        margin-top: 2rem; 
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
-        &:hover {
-            background-color: darken($secondary-color, 15%);
-            transform: scale(1.05); 
+            font-size: 3rem; 
         }
         }
-    }
-    }
-
-    @media only screen and (max-width: 768px) {
-    .course-header, .course-content, .enrollment-section {
-        padding: 1rem; 
-        margin: 1rem 0; 
-    }
-
-    .course-title {
-        font-size: 3rem; 
-    }
-    }
 
     /************** ADMIN *********************/
     /* Admin center container */

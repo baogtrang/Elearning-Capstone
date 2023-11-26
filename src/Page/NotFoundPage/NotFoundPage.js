@@ -1,8 +1,10 @@
 import React from "react";
-import Lottie from "react-lottie"
-import notFoundAnimation from "./NotFoundAnimation.json"
+import Lottie from "react-lottie";
+import notFoundAnimation from "./NotFoundAnimation.json";
+import { useNavigate } from "react-router-dom";
 
 export default function NotFoundPage() {
+    const navigate = useNavigate();
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -20,6 +22,8 @@ export default function NotFoundPage() {
                 width={400}
                 isStopped={false}
                 isPaused={false} />
+
+            <button onClick={()=>navigate("/")}>Go back to main page</button>
         </div>
     );
 }
